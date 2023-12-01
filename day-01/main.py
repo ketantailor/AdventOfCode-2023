@@ -27,8 +27,8 @@ def read_lines(input_file_name: str, strip = True) -> Iterable[str]:
     with open(input_file_name, 'r') as f:
         if strip:
             return list(map(lambda s: s.strip(), f.readlines()))
-        else:
-            return f.readlines()
+
+        return f.readlines()
 
 
 def get_calibration_value(s: str) -> int:
@@ -61,13 +61,13 @@ def get_calibration_value_2(s: str) -> int:
                 last = v
                 break
         if last:
-            break;
+            break
 
     return int(first + last)
 
 
 if __name__ == '__main__':
-    print(f'Advent of Code: Day 01')
+    print('Advent of Code: Day 01')
     lines = read_lines('input.txt')
 
     ans1 = sum(map(get_calibration_value, lines))
